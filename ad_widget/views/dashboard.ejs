@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertiser Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, <%= user.username %>!</h1>
+    <h2>Your Ad Campaigns</h2>
+
+    <% if (ads.length > 0) { %>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Campaign Name</th>
+                    <th>Destination URL</th>
+                    <th>Image</th>
+                    <th>Impressions</th>
+                    <th>Clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% ads.forEach(ad => { %>
+                    <tr>
+                        <td><%= ad.name %></td>
+                        <td><%= ad.destination_url %></td>
+                        <td><img src="/uploads/<%= ad.image_filename %>" alt="<%= ad.name %>" width="100"></td>
+                        <td><%= ad.impressions %></td>
+                        <td><%= ad.clicks %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>You have no active campaigns.</p>
+    <% } %>
+
+    <hr>
+    <a href="/ads/new">Create New Ad Campaign</a>
+    <br>
+    <a href="/logout">Logout</a>
+
+</body>
+</html>
