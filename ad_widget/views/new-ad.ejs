@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Ad</title>
+</head>
+<body>
+    <h1>Create a New Ad Campaign</h1>
+    <form action="/ads" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="name">Campaign Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="destination_url">Destination URL:</label>
+            <input type="url" id="destination_url" name="destination_url" required>
+        </div>
+        <div>
+            <label for="adImage">Ad Image:</label>
+            <input type="file" id="adImage" name="adImage" required>
+        </div>
+        <button type="submit">Create Campaign</button>
+    </form>
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

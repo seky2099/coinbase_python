@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publisher Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, <%= user.username %>!</h1>
+    <h2>Your Site's Performance</h2>
+    <p>Total Impressions: <%= stats.total_impressions || 0 %></p>
+    <p>Total Clicks: <%= stats.total_clicks || 0 %></p>
+
+    <hr>
+
+    <h2>Your Ad Widget Code</h2>
+    <p>Copy and paste this code into your website's HTML where you want the ad to appear:</p>
+    <textarea rows="4" cols="80" readonly>
+<div id="ad-widget-container"></div>
+<script src="##YOUR_APP_URL##/widget.js" async></script>
+    </textarea>
+    <p>Note: You will need to replace '##YOUR_APP_URL##' with the actual URL of your deployed application.</p>
+
+    <br>
+    <a href="/logout">Logout</a>
+
+</body>
+</html>

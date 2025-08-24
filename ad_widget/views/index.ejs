@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Widget App</title>
+</head>
+<body>
+    <h1>Welcome to the Ad Widget App</h1>
+
+    <% if (user) { %>
+        <p>Hello, <%= user.username %>!</p>
+        <p>Your role is: <%= user.role %></p>
+        <a href="/logout">Logout</a>
+    <% } else { %>
+        <p>Please log in or register.</p>
+        <a href="/login">Login</a> | <a href="/register">Register</a>
+    <% } %>
+
+</body>
+</html>
